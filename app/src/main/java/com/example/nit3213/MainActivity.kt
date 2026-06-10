@@ -6,13 +6,14 @@ import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.example.nit3213.ui.dashboard.DashboardScreen
+import com.example.nit3213.ui.dashboard.DashboardViewModel
 import com.example.nit3213.ui.login.LoginScreen
 import com.example.nit3213.ui.login.LoginViewModel
 import dagger.hilt.android.AndroidEntryPoint
@@ -49,12 +50,14 @@ fun AppNavigation() {
         }
         composable("dashboard/{keypass}") { backStackEntry ->
             val keypass = backStackEntry.arguments?.getString("keypass") ?: ""
-            DashboardPlaceholder(keypass)
+            val viewModel: DashboardViewModel = hiltViewModel()
+            DashboardScreen(
+                keypass = keypass,
+                viewModel = viewModel,
+                onEntityClick = { entity ->
+                    // Navigate to details screen (to be implemented)
+                }
+            )
         }
     }
-}
-
-@Composable
-fun DashboardPlaceholder(keypass: String) {
-    Text(text = "Dashboard Keypass: $keypass")
 }
