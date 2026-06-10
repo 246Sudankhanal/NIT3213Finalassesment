@@ -4,13 +4,17 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.unit.dp
+import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
+import com.example.nit3213.ui.login.LoginScreen
+import com.example.nit3213.ui.login.LoginViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -23,7 +27,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    Greeting("Sudan (s12345678)")
+                    AppNavigation()
                 }
             }
         }
@@ -31,9 +35,26 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier.padding(16.dp)
-    )
+fun AppNavigation() {
+    val navController = rememberNavController()
+    NavHost(navController = navController, startDestination = "login") {
+        composable("login") {
+            val viewModel: LoginViewModel = hiltViewModel()
+            LoginScreen(
+                viewModel = viewModel,
+                onLoginSuccess = { keypass ->
+                    navController.navigate("dashboard/$keypass")
+                }
+            )
+        }
+        composable("dashboard/{keypass}") { backStackEntry ->
+            val keypass = backStackEntry.arguments?.getString("keypass") ?: ""
+            DashboardPlaceholder(keypass)
+        }
+    }
+}
+
+@Composable
+fun DashboardPlaceholder(keypass: String) {
+    Text(text = "Dashboard Keypass: $keypass")
 }
