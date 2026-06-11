@@ -27,8 +27,8 @@ This project is an Android application developed for the NIT3213 course at Victo
 4. Run the `app` module on an emulator or a physical Android device (API 24+).
 
 ## Credentials for Testing
-- **Username:** `Sudan` (Replace with your first name)
-- **Password:** `s12345678` (Replace with your student ID)
+- **Username:** `s8171155` (Your student ID)
+- **Password:** `Sudan` (Your first name)
 
 ## Progress
 - [x] Project Initialization
