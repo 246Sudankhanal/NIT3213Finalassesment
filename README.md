@@ -35,8 +35,8 @@ This project is an Android application developed for the NIT3213 course at Victo
 - [x] Networking Layer Setup
 - [x] Dependency Injection Configuration
 - [x] Login Screen Implementation
-- [ ] Dashboard Screen Implementation
-- [ ] Details Screen Implementation
+- [x] Dashboard Screen Implementation
+- [x] Details Screen Implementation
 - [ ] Unit Testing
 
 ---

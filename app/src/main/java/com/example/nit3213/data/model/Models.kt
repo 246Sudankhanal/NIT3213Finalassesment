@@ -17,7 +17,9 @@ data class DashboardResponse(
 )
 
 data class Entity(
-    @SerializedName("property1") val property1: String,
-    @SerializedName("property2") val property2: String,
+    @SerializedName("deviceName") val deviceName: String,
+    @SerializedName("manufacturer") val manufacturer: String,
+    @SerializedName("operatingSystem") val operatingSystem: String,
+    @SerializedName("releaseYear") val releaseYear: Int,
     @SerializedName("description") val description: String
 )

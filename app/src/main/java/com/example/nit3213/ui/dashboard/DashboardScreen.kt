@@ -11,6 +11,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.example.nit3213.data.model.Entity
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun DashboardScreen(
     keypass: String,
@@ -25,7 +26,7 @@ fun DashboardScreen(
 
     Scaffold(
         topBar = {
-            SmallTopAppBar(title = { Text("Dashboard") })
+            TopAppBar(title = { Text("Technology Dashboard") })
         }
     ) { paddingValues ->
         Box(modifier = Modifier.padding(paddingValues).fillMaxSize()) {
@@ -58,12 +59,15 @@ fun EntityItem(entity: Entity, onClick: () -> Unit) {
     Card(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(8.dp)
-            .clickable { onClick() }
+            .padding(horizontal = 16.dp, vertical = 8.dp)
+            .clickable { onClick() },
+        elevation = CardDefaults.cardElevation(defaultElevation = 4.dp)
     ) {
         Column(modifier = Modifier.padding(16.dp)) {
-            Text(text = entity.property1, style = MaterialTheme.typography.titleLarge)
-            Text(text = entity.property2, style = MaterialTheme.typography.bodyMedium)
+            Text(text = entity.deviceName, style = MaterialTheme.typography.titleLarge)
+            Spacer(modifier = Modifier.height(4.dp))
+            Text(text = "Manufacturer: ${entity.manufacturer}", style = MaterialTheme.typography.bodyMedium)
+            Text(text = "OS: ${entity.operatingSystem}", style = MaterialTheme.typography.bodySmall)
         }
     }
 }
