@@ -1,24 +1,19 @@
 # NIT3213 Mobile Application Development - Final Assignment
 
 ## Project Overview
-This project is an Android application developed for the NIT3213 course at Victoria University. It demonstrates proficiency in modern Android development practices, including:
-- **Jetpack Compose** for building declarative UIs.
-- **Hilt** for Dependency Injection.
-- **Retrofit & OkHttp** for networking and API integration.
-- **MVVM Architecture** with clean code principles.
-- **Navigation Compose** for screen transitions.
+This project is an Android application developed for the NIT3213 course at Victoria University. It demonstrates proficiency in traditional Android development practices using **Activities and XML Layouts**.
 
 ## Features
-- **Login Screen:** Authenticates users via the `vu-nit3213-api`.
-- **Dashboard:** Fetches and displays a list of entities based on the authentication token.
-- **Details Screen:** Provides detailed information about a selected entity.
+- **Login Screen:** Authenticates users via the `vu-nit3213-api` using `LoginActivity`.
+- **Dashboard:** Fetches and displays a list of entities in a `RecyclerView` with `DashboardActivity`.
+- **Details Screen:** Provides detailed information about a selected entity in `DetailsActivity`.
 
 ## Technical Stack
 - **Language:** Kotlin
-- **UI Framework:** Jetpack Compose
+- **UI Framework:** Android XML Layouts (ViewBinding)
 - **DI Framework:** Hilt
 - **Networking:** Retrofit / Gson
-- **Architecture:** MVVM (Model-View-ViewModel)
+- **Architecture:** MVVM (Model-View-ViewModel) with Activity observers.
 
 ## How to Build and Run
 1. Clone the repository.
@@ -34,10 +29,10 @@ This project is an Android application developed for the NIT3213 course at Victo
 - [x] Project Initialization
 - [x] Networking Layer Setup
 - [x] Dependency Injection Configuration
-- [x] Login Screen Implementation
-- [x] Dashboard Screen Implementation
-- [x] Details Screen Implementation
-- [ ] Unit Testing
+- [x] Login Activity Implementation (XML)
+- [x] Dashboard Activity Implementation (XML)
+- [x] Details Activity Implementation (XML)
+- [x] Unit Testing
 
 ---
 *Developed by Sudan Khanal*

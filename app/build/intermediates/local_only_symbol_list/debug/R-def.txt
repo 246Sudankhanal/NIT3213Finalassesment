@@ -1,0 +1,28 @@
+R_DEF: Internal format may change without notice
+local
+drawable ic_launcher_background
+drawable ic_launcher_foreground
+id btnBack
+id btnLogin
+id etPassword
+id etUsername
+id progressBar
+id rvEntities
+id tvDescription
+id tvDescriptionLabel
+id tvDeviceName
+id tvDeviceNameLabel
+id tvManufacturer
+id tvManufacturerLabel
+id tvOS
+id tvOSLabel
+id tvReleaseYear
+id tvReleaseYearLabel
+layout activity_dashboard
+layout activity_details
+layout activity_login
+layout item_entity
+mipmap ic_launcher
+mipmap ic_launcher_round
+string app_name
+style Theme.NIT3213Assignment

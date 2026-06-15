@@ -56,7 +56,7 @@ class DashboardActivity : AppCompatActivity() {
             }
             startActivity(intent)
         }
-        binding.recyclerView.layoutManager = LinearLayoutManager(this)
-        binding.recyclerView.adapter = adapter
+        binding.rvEntities.layoutManager = LinearLayoutManager(this)
+        binding.rvEntities.adapter = adapter
     }
 }
